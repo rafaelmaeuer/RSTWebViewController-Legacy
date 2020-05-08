@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6DF230FE1C419B04ACC3F20C /* libPods-RSTWebDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B84B46D75C417FD9B553043 /* libPods-RSTWebDemo.a */; };
 		BFDC0F0919DFB6C000EC23AE /* RSTWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDC0F0819DFB6BF00EC23AE /* RSTWebViewController.m */; };
 		BFDC0F0E19DFB6C800EC23AE /* back_button.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDC0F0A19DFB6C800EC23AE /* back_button.png */; };
 		BFDC0F0F19DFB6C800EC23AE /* back_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDC0F0B19DFB6C800EC23AE /* back_button@2x.png */; };
@@ -27,11 +28,12 @@
 		CC4E11BC1794AD5500C539A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC4E11BA1794AD5500C539A5 /* Main.storyboard */; };
 		CC4E11C21794AD5500C539A5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4E11C11794AD5500C539A5 /* ViewController.m */; };
 		CC4E11C41794AD5500C539A5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC4E11C31794AD5500C539A5 /* Images.xcassets */; };
-		E89C8B74C54140A1BBA16173 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F9AA4DE17604AB396324FB8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8F9AA4DE17604AB396324FB8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1230B76AAE1902CBD6C9885C /* Pods-RSTWebDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RSTWebDemo.release.xcconfig"; path = "Target Support Files/Pods-RSTWebDemo/Pods-RSTWebDemo.release.xcconfig"; sourceTree = "<group>"; };
+		1B84B46D75C417FD9B553043 /* libPods-RSTWebDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RSTWebDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF1638B6C9645DBDDF9CF9B1 /* Pods-RSTWebDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RSTWebDemo.debug.xcconfig"; path = "Target Support Files/Pods-RSTWebDemo/Pods-RSTWebDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		BFDC0F0719DFB6BF00EC23AE /* RSTWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RSTWebViewController.h; path = ../../RSTWebViewController/RSTWebViewController.h; sourceTree = "<group>"; };
 		BFDC0F0819DFB6BF00EC23AE /* RSTWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RSTWebViewController.m; path = ../../RSTWebViewController/RSTWebViewController.m; sourceTree = "<group>"; };
 		BFDC0F0A19DFB6C800EC23AE /* back_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back_button.png; path = ../../RSTWebViewController/back_button.png; sourceTree = "<group>"; };
@@ -61,7 +63,6 @@
 		CC4E11C11794AD5500C539A5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CC4E11C31794AD5500C539A5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CC4E11CA1794AD5500C539A5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		F8D77DA3202246F187702A1A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,13 +73,22 @@
 				CC4E11AB1794AD5500C539A5 /* CoreGraphics.framework in Frameworks */,
 				CC4E11AD1794AD5500C539A5 /* UIKit.framework in Frameworks */,
 				CC4E11A91794AD5500C539A5 /* Foundation.framework in Frameworks */,
-				E89C8B74C54140A1BBA16173 /* libPods.a in Frameworks */,
+				6DF230FE1C419B04ACC3F20C /* libPods-RSTWebDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A76105A4D5AE4D3F8B41CFC8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BF1638B6C9645DBDDF9CF9B1 /* Pods-RSTWebDemo.debug.xcconfig */,
+				1230B76AAE1902CBD6C9885C /* Pods-RSTWebDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		BFDC0F2019DFB6DA00EC23AE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,7 +110,7 @@
 				CC4E11AE1794AD5500C539A5 /* RSTWebDemo */,
 				CC4E11A71794AD5500C539A5 /* Frameworks */,
 				CC4E11A61794AD5500C539A5 /* Products */,
-				F8D77DA3202246F187702A1A /* Pods.xcconfig */,
+				A76105A4D5AE4D3F8B41CFC8 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,7 +129,7 @@
 				CC4E11AA1794AD5500C539A5 /* CoreGraphics.framework */,
 				CC4E11AC1794AD5500C539A5 /* UIKit.framework */,
 				CC4E11CA1794AD5500C539A5 /* XCTest.framework */,
-				8F9AA4DE17604AB396324FB8 /* libPods.a */,
+				1B84B46D75C417FD9B553043 /* libPods-RSTWebDemo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -171,11 +181,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CC4E11DA1794AD5500C539A5 /* Build configuration list for PBXNativeTarget "RSTWebDemo" */;
 			buildPhases = (
-				7AE6DE39B157410A8B10613C /* Check Pods Manifest.lock */,
+				5561BE60AFC07A42AA59CB25 /* [CP] Check Pods Manifest.lock */,
 				CC4E11A11794AD5500C539A5 /* Sources */,
 				CC4E11A21794AD5500C539A5 /* Frameworks */,
 				CC4E11A31794AD5500C539A5 /* Resources */,
-				7F5F2A9AFEC54175A7866201 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -200,6 +209,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -235,33 +245,27 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7AE6DE39B157410A8B10613C /* Check Pods Manifest.lock */ = {
+		5561BE60AFC07A42AA59CB25 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
+			inputFileListPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RSTWebDemo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-		};
-		7F5F2A9AFEC54175A7866201 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -373,13 +377,15 @@
 		};
 		CC4E11DB1794AD5500C539A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F8D77DA3202246F187702A1A /* Pods.xcconfig */;
+			baseConfigurationReference = BF1638B6C9645DBDDF9CF9B1 /* Pods-RSTWebDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CURRENT_PROJECT_VERSION = 1;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RSTWebDemo/RSTWebDemo-Prefix.pch";
 				INFOPLIST_FILE = "RSTWebDemo/RSTWebDemo-Info.plist";
+				MARKETING_VERSION = 1.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -387,13 +393,15 @@
 		};
 		CC4E11DC1794AD5500C539A5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F8D77DA3202246F187702A1A /* Pods.xcconfig */;
+			baseConfigurationReference = 1230B76AAE1902CBD6C9885C /* Pods-RSTWebDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CURRENT_PROJECT_VERSION = 1;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RSTWebDemo/RSTWebDemo-Prefix.pch";
 				INFOPLIST_FILE = "RSTWebDemo/RSTWebDemo-Info.plist";
+				MARKETING_VERSION = 1.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

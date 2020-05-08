@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'RSTWebViewController'
-  s.version      = '0.1'
+  s.version      = '0.2'
   s.summary      = 'Powerful yet beautiful iOS 7 web browser'
   s.homepage     = 'http://rileytestut.com/'
   s.platform     = :ios, 7.0

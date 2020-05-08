@@ -1,3 +1,5 @@
 platform :ios, "7.0"
 
-pod "NJKWebViewProgress"
+target 'RSTWebDemo' do
+	pod "NJKWebViewProgress"
+end
