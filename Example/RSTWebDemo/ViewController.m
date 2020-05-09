@@ -30,7 +30,7 @@
 }
 
 - (IBAction)presentWebViewController:(id)sender {
-    RSTWebViewController *webViewController = [[RSTWebViewController alloc] initWithAddress:@"http://rileytestut.com"];
+    RSTWebViewController *webViewController = [[RSTWebViewController alloc] initWithAddress:@"https://google.com/"];
     [self.navigationController pushViewController:webViewController animated:YES];
 }
 
