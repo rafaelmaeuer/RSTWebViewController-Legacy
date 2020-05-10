@@ -418,7 +418,7 @@
     });
 }
 
-#pragma mark - UIWebViewController delegate
+#pragma mark - WKWebViewController delegate
 
 //- (void)webViewDidStartLoad:(UIWebView *)webView
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation

@@ -19,8 +19,8 @@ typedef void(^RSTWebViewControllerStartDownloadBlock)(BOOL shouldContinue, NSPro
 
 @optional
 /**
- *	Called when the web view is actually done loading content, unlike the UIWebViewDelegate method
- *  webViewDidFinishLoad: which is called after every frame.
+ *	Called when the web view is actually done loading content, unlike the WKNavigationDelegate method
+ *  didFinishNavigation: which is called after every frame.
  *
  *	@param	webViewController	The RSTWebViewController loading the content
  */
