@@ -13,6 +13,40 @@
 
 //////////////////
 
+// Add interface to evaluate JavaScript
+@interface WKWebView(SynchronousEvaluateJavaScript)
+- (NSString *)stringByEvaluatingJavaScriptFromString:(NSString *)script;
+@end
+
+// Add implementation to evaluate JavaScript
+@implementation WKWebView(SynchronousEvaluateJavaScript)
+
+- (NSString *)stringByEvaluatingJavaScriptFromString:(NSString *)script {
+    __block NSString *resultString = nil;
+    __block BOOL finished = NO;
+
+    [self evaluateJavaScript:script completionHandler:^(id result, NSError *error) {
+        if (error == nil) {
+            if (result != nil) {
+                resultString = [NSString stringWithFormat:@"%@", result];
+            }
+        } else {
+            NSLog(@"evaluateJavaScript error : %@", error.localizedDescription);
+        }
+        finished = YES;
+    }];
+
+    while (!finished)
+    {
+        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
+    }
+
+    return resultString;
+}
+@end
+
+//////////////////
+
 // Category on NSObject so we can associate an NSProgress with a particular download task
 // It's a category on NSObject because internally, downloads are done via the __NSCFLocalDownloadTask class, which apparently isn't a subclass of NSURLSessionTask
 @interface NSObject (Progress)
@@ -39,9 +73,9 @@
 
 //////////////////
 
-@interface RSTWebViewController () <UIWebViewDelegate, NJKWebViewProgressDelegate, NSURLSessionDownloadDelegate, UIPopoverControllerDelegate>
+@interface RSTWebViewController () <WKNavigationDelegate, NJKWebViewProgressDelegate, NSURLSessionDownloadDelegate, UIPopoverControllerDelegate>
 
-@property (strong, nonatomic) UIWebView *webView;
+@property (strong, nonatomic) WKWebView *webView;
 
 @property (strong, nonatomic) NSURLRequest *currentRequest;
 @property (strong, nonatomic) UIProgressView *progressView;
@@ -113,11 +147,12 @@
 
 - (void)loadView
 {
-    self.webView = [[UIWebView alloc] init];
-    self.webView.delegate = self.webViewProgress;
+    self.webView = [[WKWebView alloc] init];
+    self.webView.navigationDelegate = self.webViewProgress;
     self.webView.backgroundColor = [UIColor whiteColor];
     self.webView.scrollView.backgroundColor = [UIColor whiteColor];
-    self.webView.scalesPageToFit = YES;
+    //TODO: find WKWebView compatible solution
+    //self.webView.scalesPageToFit = YES;
     self.view = self.webView;
     
     // iOS 7 bug: bar of black appears at bottom of web view until first page is loaded. To compensate, we load a white page, then load the request
@@ -385,7 +420,8 @@
 
 #pragma mark - UIWebViewController delegate
 
-- (void)webViewDidStartLoad:(UIWebView *)webView
+//- (void)webViewDidStartLoad:(UIWebView *)webView
+- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation
 {
     if (!_performedInitialRequest)
     {
@@ -397,25 +433,28 @@
 }
 
 
-- (void)webViewDidFinishLoad:(UIWebView *)webView
+//- (void)webViewDidFinishLoad:(UIWebView *)webView
+- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation
 {
     if (!_performedInitialRequest)
     {
         _performedInitialRequest = YES;
         [self.webView loadRequest:self.currentRequest];
+        //[self.view addSubview:_webView];
     }
     
-    self.navigationItem.title = [webView stringByEvaluatingJavaScriptFromString:@"document.title"];
-    self.currentRequest = self.webView.request;
+    self.navigationItem.title = webView.title;
+    //TODO: WKWebView compatible solution needed?
+    //self.currentRequest = self.webView.request;
     
     // Don't hide progress view here, as the webpage isn't necessarily visible yet
-    
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     
     [self refreshToolbarItems];
 }
 
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+//- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+- (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error
 {
 	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     [self refreshToolbarItems];
@@ -423,14 +462,19 @@
     [self didFinishLoading];
 }
 
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+//- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(nonnull WKNavigationAction *)navigationAction decisionHandler:(nonnull void (^)(WKNavigationActionPolicy))decisionHandler
 {
+    NSURLRequest *request = navigationAction.request;
+    
     if ([self.downloadDelegate webViewController:self shouldInterceptDownloadRequest:request])
     {
         [self startDownloadWithRequest:request];
     }
     
-    return YES;
+    //return YES;
+    //TODO: return decisionHandler policy
+    //decisionHandler(WKNavigationActionPolicyAllow);
 }
 
 #pragma mark - Private
@@ -547,7 +591,7 @@
 {
     [self.webView stopLoading];
  	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-    self.webView.delegate = nil;
+    self.webView.navigationDelegate = nil;
 }
 
 @end

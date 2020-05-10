@@ -6,6 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <WebKit/WebKit.h>
 
 #import "RSTSafariActivity.h"
 #import "RSTChromeActivity.h"
@@ -60,8 +61,8 @@ typedef void(^RSTWebViewControllerStartDownloadBlock)(BOOL shouldContinue, NSPro
  */
 @property (weak, nonatomic) id <RSTWebViewControllerDownloadDelegate> downloadDelegate;
 
-// UIWebView used to display webpages
-@property (readonly, strong, nonatomic) UIWebView *webView;
+// WKWebView used to display webpages
+@property (readonly, strong, nonatomic) WKWebView *webView;
 
 // UIActivity activity types that shouldn't be displayed when sharing a link
 @property (copy, nonatomic) NSArray /* NSString */ *excludedActivityTypes;
