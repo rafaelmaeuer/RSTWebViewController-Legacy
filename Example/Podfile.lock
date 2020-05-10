@@ -1,16 +1,25 @@
 PODS:
-  - NJKWebViewProgress (0.1.6)
+  - NJKWebViewProgress (0.3.0):
+    - NJKWebViewProgress/Core (= 0.3.0)
+    - NJKWebViewProgress/ProgressView (= 0.3.0)
+  - NJKWebViewProgress/Core (0.3.0)
+  - NJKWebViewProgress/ProgressView (0.3.0)
 
 DEPENDENCIES:
-  - NJKWebViewProgress
+  - NJKWebViewProgress (from `https://github.com/rafaelmaeuer/NJKWebViewProgress.git`)
 
-SPEC REPOS:
-  trunk:
-    - NJKWebViewProgress
+EXTERNAL SOURCES:
+  NJKWebViewProgress:
+    :git: https://github.com/rafaelmaeuer/NJKWebViewProgress.git
+
+CHECKOUT OPTIONS:
+  NJKWebViewProgress:
+    :commit: 3c458a871c0871c16252a5cb5e5c2d33ece71587
+    :git: https://github.com/rafaelmaeuer/NJKWebViewProgress.git
 
 SPEC CHECKSUMS:
-  NJKWebViewProgress: b6e990dd49d5ec027f78dcf5c52420a29c92a392
+  NJKWebViewProgress: cbf5d01b53553894ad2364e9d09ba8d31c42aae3
 
-PODFILE CHECKSUM: 72ec5a9605853d999e726ff864fcd63f6873c98d
+PODFILE CHECKSUM: ab14f83252e1551110db93a4d3db6092b9cf45e3
 
 COCOAPODS: 1.9.1
