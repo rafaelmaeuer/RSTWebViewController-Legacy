@@ -1,10 +1,10 @@
 Pod::Spec.new do |s|
   s.name         = 'RSTWebViewController'
-  s.version      = '0.2'
+  s.version      = '0.2.1'
   s.summary      = 'Powerful yet beautiful iOS 8 web browser'
   s.homepage     = 'https://github.com/rafaelmaeuer/RSTWebViewController'
-  s.platform     = :ios, '8.0'
-  s.ios.deployment_target = '8.0'
+  s.platform     = :ios, '12.0'
+  s.ios.deployment_target = '12.0'
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.authors      = { 'Riley Testut' => 'riley@rileytestut.com' }
   s.source = {

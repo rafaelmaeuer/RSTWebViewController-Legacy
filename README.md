@@ -6,7 +6,7 @@ Originally created as an iOS 7 Web Browser RSTWebViewController is used in GBA4i
 
 ## Requirements
 
-- iOS 8.0 or later
+- iOS 12.0 or later
 - ARC
 
 ## Install

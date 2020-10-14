@@ -1,4 +1,4 @@
-platform :ios, '8.0'
+platform :ios, '12.0'
 
 target 'RSTWebDemo' do
 	pod 'NJKWebViewProgress', :git => 'https://github.com/rafaelmaeuer/NJKWebViewProgress.git'
