@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'RSTWebViewController'
-  s.version      = '0.2.1'
+  s.version      = '0.2.2'
   s.summary      = 'Powerful yet beautiful iOS 8 web browser'
   s.homepage     = 'https://github.com/rafaelmaeuer/RSTWebViewController'
   s.platform     = :ios, '12.0'

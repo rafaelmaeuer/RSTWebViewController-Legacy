@@ -149,8 +149,13 @@
 {
     self.webView = [[WKWebView alloc] init];
     self.webView.navigationDelegate = self.webViewProgress;
-    self.webView.backgroundColor = [UIColor whiteColor];
-    self.webView.scrollView.backgroundColor = [UIColor whiteColor];
+    
+    if (@available(iOS 13.0, *)) {
+        self.webView.opaque = NO;
+        self.webView.backgroundColor = [UIColor systemBackgroundColor];
+        self.webView.scrollView.backgroundColor = [UIColor systemBackgroundColor];
+    }
+    
     //TODO: find WKWebView compatible solution
     //self.webView.scalesPageToFit = YES;
     self.view = self.webView;
