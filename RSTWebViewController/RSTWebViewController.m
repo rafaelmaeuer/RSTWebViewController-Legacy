@@ -161,7 +161,8 @@
     self.view = self.webView;
     
     // iOS 7 bug: bar of black appears at bottom of web view until first page is loaded. To compensate, we load a white page, then load the request
-    [self.webView loadHTMLString:@"<html><body bgcolor='#FFFFFF'></body></html>" baseURL:nil];
+    //[self.webView loadHTMLString:@"<html><body bgcolor='#FFFFFF'></body></html>" baseURL:nil];
+    [self.webView loadHTMLString:@"" baseURL:nil];
 }
 
 - (void)viewDidLoad
